@@ -1,0 +1,134 @@
+using System;
+namespace InheritanceDemo
+{
+ // ---------- Single Inheritance ----------
+ class Parent
+ {
+ public void ParentMethod()
+ {
+ Console.WriteLine("This is Parent class");
+ }
+ }
+ class Child : Parent
+ {
+ public void ChildMethod()
+ {
+ Console.WriteLine("This is Child class");
+ }
+ // ---------- Multilevel Inheritance ----------
+ class GrandParent
+ {
+ public void GrandParentMethod()
+ {
+ Console.WriteLine("This is GrandParent class");
+ }
+ }
+ class ParentLevel : GrandParent
+ {
+ public void ParentLevelMethod()
+ {
+ Console.WriteLine("This is ParentLevel class");
+ }
+ }
+ class ChildLevel : ParentLevel
+ {
+ public void ChildLevelMethod()
+ {
+ Console.WriteLine("This is ChildLevel class");
+ }
+ }
+ // ---------- Hierarchical Inheritance ----------
+ class BaseClass
+ {
+ public void BaseMethod()
+ {
+ Console.WriteLine("This is Base class");
+ }
+ }
+class DerivedOne : BaseClass
+ {
+ public void MethodOne()
+ {
+ Console.WriteLine("Derived class One");
+ }
+ }
+ class DerivedTwo : BaseClass
+ {
+ public void MethodTwo()
+ {
+ Console.WriteLine("Derived class Two");
+ }
+ }
+ // ---------- Multiple Inheritance using Interface ----------
+ interface IFirst
+ {
+ void FirstMethod();
+ }
+ interface ISecond
+ {
+ void SecondMethod();
+ }
+ class MultipleInheritance : IFirst, ISecond
+ {
+ public void FirstMethod()
+ {
+ Console.WriteLine("First interface method");
+ }
+ public void SecondMethod()
+ {
+ Console.WriteLine("Second interface method");
+ }
+ }
+ class Program
+ {
+ static void Main(string[] args)
+ {
+ Console.WriteLine("---- Single Inheritance ----");
+ Child c = new Child();
+ c.ParentMethod();
+ c.ChildMethod();
+ Console.WriteLine("\n---- Multilevel Inheritance ----");
+ ChildLevel cl = new ChildLevel();
+ cl.GrandParentMethod();
+ cl.ParentLevelMethod();
+ cl.ChildLevelMethod();
+ Console.WriteLine("\n---- Hierarchical Inheritance ----");
+ DerivedOne d1 = new DerivedOne();
+ d1.BaseMethod();
+ d1.MethodOne();
+ DerivedTwo d2 = new DerivedTwo();
+ d2.BaseMethod();
+ d2.MethodTwo();
+ Console.WriteLine("\n---- Multiple Inheritance (Interface) ----");
+ MultipleInheritance mi = new MultipleInheritance();
+ mi.FirstMethod();
+ mi.SecondMethod();
+ Console.ReadLine();
+ }
+ }
+}
+
+
+
+B) Interfaces
+Program:
+using System;
+namespace CsharpInterface {
+interface IPolygon {
+// method without body
+void calculateArea(int l, int b);
+}
+class Rectangle : IPolygon {
+// implementation of methods inside interface
+public void calculateArea(int l, int b) {
+int area = l * b;
+Console.WriteLine("Area of Rectangle: " + area);
+}
+}
+class Program {
+static void Main (string [] args) {
+Rectangle r1 = new Rectangle();
+r1.calculateArea(100, 200);
+}
+}
+}
