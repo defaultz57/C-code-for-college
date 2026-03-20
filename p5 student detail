@@ -1,0 +1,49 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+namespace ConsoleApplication3
+{
+class Program
+{
+struct Student
+{
+public string studid, name, cname;
+public int day, month, year;
+}
+static void Main(string[] args)
+{
+int count;
+Console.Write("Enter Students count: ");
+count = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("---------------------------------------\n");
+Student[] s = new Student[5];
+int i;
+for (i = 0; i < count; i++)
+{
+Console.Write("Enter Student Id:");
+s[i].studid = Console.ReadLine();
+Console.Write("Enter Student name : ");
+s[i].name = Console.ReadLine();
+Console.Write("Enter Course name : ");
+s[i].cname = Console.ReadLine();
+Console.Write("Enter Day(1-31): ");
+s[i].day = Convert.ToInt32(Console.ReadLine());
+Console.Write("Enter Month(1-12): ");
+s[i].month = Convert.ToInt32(Console.ReadLine());
+Console.Write("Enter Year: ");
+s[i].year = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("---------------------------------------\n");
+}
+Console.WriteLine("\nStudent's List\n");
+Console.WriteLine("Student ID\tStudent Name\tCourse Name\tBirth Date\n");
+Console.WriteLine("-------------------------------------------------------------------");
+for (i = 0; i < count; i++)
+{
+Console.WriteLine(s[i].studid + "\t\t" + s[i].name + "\t\t" + s[i].cname + "\t\t" + s[i].day + "-" +
+s[i].month + "-" + s[i].year);
+}
+Console.ReadKey();
+}
+}
+}
