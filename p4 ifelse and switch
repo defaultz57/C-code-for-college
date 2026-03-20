@@ -1,0 +1,91 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+namespace ConsoleApplication1
+{
+ class Program
+ {
+ static void Main(string[] args)
+ {
+ double percentage;
+ Console.WriteLine("Enter your Percetage: ");
+ percentage = Convert.ToDouble(Console.ReadLine());
+ if (percentage >= 80.00)
+ {
+ Console.WriteLine("You get 'O' Grade.");
+ }
+ else if(percentage <= 79.99 && percentage >= 75.00)
+ {
+ Console.WriteLine("You get 'A' Grade.");
+ }
+ else if (percentage <= 74.99 && percentage >= 70.00)
+ {
+ Console.WriteLine("You get 'B' Grade.");
+ }
+ else if (percentage <= 69.99 && percentage >= 60.00)
+ {
+ Console.WriteLine("You get 'C' Grade.");
+ }
+ else if (percentage <= 59.99 && percentage >= 50.00)
+ {
+ Console.WriteLine("You get 'D' Grade.");
+ }
+ else if (percentage <= 49.99 && percentage >= 40.00)
+ {
+ Console.WriteLine("You get 'E' Grade.");
+}
+ else
+ {
+ Console.WriteLine("You get 'F' Grade.");
+ }
+ Console.ReadKey();
+ }
+ }
+}
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+namespace ConsoleApplication1
+{
+ class Program
+ {
+ static void Main(string[] args)
+ {
+ char op;
+ int first, second, result;
+ Console.Write("Enter first number: ");
+ first = Convert.ToInt32(Console.ReadLine());
+ Console.Write("\nEnter second number: ");
+ second = Convert.ToInt32(Console.ReadLine());
+ Console.Write("\nEnter operator (+, -, *, /): ");
+ op = (char)Console.Read();
+ switch (op)
+ {
+ case '+':
+ result = first + second;
+ Console.WriteLine("\n" + first + " + " + second + " = " + result);
+ break;
+ case '-':
+ result = first - second;
+ Console.WriteLine("\n" + first + " - " + second + " = " + result);
+ break;
+ case '*':
+ result = first * second;
+ Console.WriteLine("\n" + first + " * " + second + " = " + result);
+ break;
+ case '/':
+ result = first / second;
+ Console.WriteLine("\n" + first + " / " + second + " = " + result);
+ break;
+ default:
+ Console.WriteLine("Invalid Operator");
+ break;
+ }
+ Console.ReadKey();
+ }
+ }
+}
