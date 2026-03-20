@@ -1,0 +1,55 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+namespace ConsoleApplication1
+{
+ class Program
+ {
+ static void Main(string[] args)
+ {
+ string mystring;
+ int a = 100;
+ Console.WriteLine("Convert Number to String");
+ mystring = a.ToString();
+ Console.WriteLine("String is " + mystring);
+ string s = " This is test string";
+ Console.WriteLine("\nBefore Trim() Method: " + s);
+ s = s.Trim();
+ Console.WriteLine("\nAfter Trim() Method: " + s);
+ s = s.Substring(0, 4);
+ Console.WriteLine("\nSubstring() Method: " + s);
+ s = s.ToUpper();
+ Console.WriteLine("\nUppercase String: " + s);
+ s = s.Replace("IS", "AT");
+ Console.WriteLine("\nReplace String: " + s);
+ int length = s.Length;
+ Console.WriteLine("\nLength of String is: " + length);
+ Console.WriteLine("\n**********************************");
+ Console.WriteLine("\nDateTime Object");
+ DateTime myDate = DateTime.Now;
+ Console.WriteLine("Today's date is: " + myDate);
+ myDate = myDate.AddDays(100);
+ Console.WriteLine("\nAfter 100 Days the Date is: " + myDate);
+ string dateString = myDate.Year.ToString();
+ Console.WriteLine("\nYear in String is: " + dateString);
+ DateTime myDate1 = DateTime.Now;
+ DateTime myDate2 = DateTime.Now.AddHours(3000);
+ Console.WriteLine("\nDate 1 : " + myDate1);
+ Console.WriteLine("\nDate 2 : " + myDate2);
+ TimeSpan difference;
+ difference = myDate2.Subtract(myDate1);
+ Console.WriteLine("\nDifference between 2 Dates: " + difference.Days.ToString()+" Days");
+ double numberOfMinutes;
+ numberOfMinutes = difference.TotalMinutes;
+ Console.WriteLine("\nNumber of Minutes: " + numberOfMinutes);
+ Console.WriteLine("\n**********************************");
+ Console.WriteLine("\nThe Array Type:");
+ int[] myArray = { 1, 2, 3, 4, 5 };
+ int numberOfElements;
+ numberOfElements = myArray.Length;
+ Console.WriteLine("\nTotal Elements in array:" + numberOfElements);
+ Console.ReadKey();
+ }
+ }
+}
