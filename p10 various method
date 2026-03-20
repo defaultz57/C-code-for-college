@@ -1,0 +1,21 @@
+using System;
+namespace MethodDemo
+{
+ class Program
+ {
+ static void Main(string[] args)
+ {
+ // 1. Without parameters & without return value
+ DisplayMessage();
+ // 2. With parameters & without return value
+ AddNumbers(10, 20);
+ // 3. Without parameters & with return value
+ int square = GetSquare();
+ Console.WriteLine("Square is: " + square);
+ // 4. With parameters & with return value
+ int result = Multiply(5, 4);
+ Console.WriteLine("Multiplication is: " + result);
+ Console.ReadLine();
+ }
+ // 1) No parameters, no return value
+ static void DisplayMessage()
