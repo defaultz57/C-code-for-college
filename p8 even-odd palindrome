@@ -1,0 +1,53 @@
+using System;
+namespace EvenOddApp
+{
+ class Program
+ {
+ static void Main(string[] args)
+ {
+ int number;
+ Console.Write("Enter a number: ");
+ number = int.Parse(Console.ReadLine());
+ if (number % 2 == 0)
+ {
+ Console.WriteLine("The number is Even");
+ }
+ else
+ {
+ Console.WriteLine("The number is Odd");
+ }
+ Console.ReadLine();
+ }
+ }
+}
+ (B) Value is Palindrome or not
+PROGRAM:
+using System;
+namespace PalindromeApp
+{
+ class Program
+ {
+ static void Main(string[] args)
+ {
+ int number, temp, reverse = 0, remainder;
+ Console.Write("Enter a number: ");
+ number = int.Parse(Console.ReadLine());
+ temp = number;
+ while (temp > 0)
+ {
+ remainder = temp % 10;
+ reverse = reverse * 10 + remainder;
+ temp = temp / 10;
+ }
+ if (number == reverse)
+ {
+ Console.WriteLine("The value is a Palindrome");
+ }
+ else
+ {
+ Console.WriteLine("The value is not a Palindrome");
+ }
+ Console.ReadLine();
+ }
+ }
+}
