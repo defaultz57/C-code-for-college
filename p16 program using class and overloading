@@ -1,0 +1,102 @@
+using System;
+namespace sycs
+{
+ class Employee
+ {
+ public string name;
+ public void work(string work)
+ {
+ Console.WriteLine("Work: " + work);
+ }
+ }
+ class EmployeeDrive
+ {
+ static void Main(string[] args)
+ {
+ // create Employee object
+ Employee e1 = new Employee();
+ Console.WriteLine("Employee 1");
+ // set name of the Employee
+ e1.name = "Gloria";
+ Console.WriteLine("Name: " + e1.name);
+ //call method of the Employee
+ e1.work("Coding");
+ Console.ReadLine();
+ }
+ }
+}
+
+b. Constructor and Function Overloading
+1. Constructor Overloading
+Program:
+using System;
+namespace sycs
+{
+ class gamescore
+ {
+ string user;
+ int age;
+ //Default Constructor
+ public gamescore()
+ {
+ user = "John";
+ age = 25;
+ Console.WriteLine("\nPrevious User {0} and he was {1} year old", user, age);
+ }
+ //Parameterized Constructor
+ public gamescore(string name, int age1)
+ {
+ user = name;
+ age = age1;
+ Console.WriteLine("\nCurrent User {0} and he is {1} year old", user, age);
+ }
+ }
+ class sycs
+ {
+ static void Main(string[] args)
+ {
+ //Default Constructor Called
+ gamescore gs = new gamescore();
+ //Overloaded Constructor.
+ gamescore gs1 = new gamescore("Ram", 30);
+ Console.ReadLine();
+ }
+ }
+}
+
+
+2. Function Overloading
+Program:
+using System;
+namespace sycs
+{
+ class shape
+ {
+ public void Area(int side)
+ {
+ int square_area = side * side;
+ Console.WriteLine("\nThe Area of Square is :" + square_area);
+ }
+ public void Area(int length, int breadth)
+ {
+ int rect_area = length * breadth;
+ Console.WriteLine("\nThe Area of Rectangle is :" + rect_area);
+ }
+ public void Area(double radius)
+ {
+ double circle_area = 3.14 * radius * radius;
+ Console.WriteLine("\nThe Area of Circle is :" + circle_area);
+ }
+ }
+class sycs
+ {
+ static void Main(string[] args)
+ {
+ shape s = new shape();
+ s.Area(10);
+ s.Area(10, 20);
+ s.Area(10.8);
+ Console.ReadKey();
+ }
+ }
+}
