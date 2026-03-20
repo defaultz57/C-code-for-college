@@ -1,0 +1,38 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+namespace ConsoleApplication10
+{
+class Program
+{
+static void Main(string[] args)
+{
+int choice;
+Console.WriteLine("Enter your choice:\nPress 1 - Dollar to Rupee\nPress 2 - Euro to
+Rupee");
+choice = Convert.ToInt32(Console.ReadLine());
+switch (choice)
+{
+case 1:
+Double dollar , rupee = 79.27, val;
+Console.WriteLine("\nEnter the Dollar Value :");
+dollar = Convert.ToDouble(Console.ReadLine());
+val = dollar * rupee;
+Console.WriteLine(dollar + " Dollar Equals " + val + " Rupees");
+break;
+case 2:
+Double euro , rupees = 80.82, value;
+Console.WriteLine("\nEnter the Euro Value :");
+euro = Convert.ToDouble(Console.ReadLine());
+value = euro * rupees;
+Console.WriteLine(euro + " Euro Equals " + value + " Rupees");
+break;
+default:
+Console.WriteLine("You pressed wrong choice...!!!");
+break;
+}
+Console.ReadKey();
+}
+}
+}
