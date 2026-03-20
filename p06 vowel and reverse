@@ -1,0 +1,72 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+namespace ConsoleApplication6
+{
+class Program
+{
+static void Main(string[] args)
+{
+char ch;
+Console.Write("\n");
+Console.Write("check whether the input alphabet is a vowel or not:\n");
+Console.Write("-----------------------------------------------------");
+Console.Write("\n\n");
+Console.Write("Input an Alphabet (A-Z or a-z) : ");
+ch = Convert.ToChar(Console.ReadLine().ToLower());
+switch (ch)
+{
+case 'a':
+Console.WriteLine("\n" + ch + " is vowel");
+break;
+case 'i':
+Console.WriteLine("\n" + ch + " is vowel");
+break;
+case 'o':
+Console.WriteLine("\n" + ch + " is vowel");
+break;
+case 'u':
+Console.WriteLine("\n" + ch + " is vowel");
+break;
+case 'e':
+Console.WriteLine("\n" + ch + " is vowel");
+break;
+default:
+Console.WriteLine("\n" + ch + " is not a vowel");
+break;
+}
+Console.ReadKey();
+}
+}
+}
+
+(B) Reverse a number and find sum of digits of a number.
+Program:
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+namespace ConsoleApplication8
+{
+class Program
+{
+static void Main(string[] args)
+{
+int num, actualnumber, revnum = 0, digit, sumDigits = 0;
+Console.Write("Enter number:");
+num = Convert.ToInt32(Console.ReadLine());
+actualnumber = num;
+while (num > 0)
+{
+digit = num % 10;
+revnum = revnum * 10 + digit;
+sumDigits = sumDigits + digit;
+num = num / 10;
+}
+Console.WriteLine("Reverse of " + actualnumber + " = " + revnum);
+Console.WriteLine("Sum of its digits: " + sumDigits);
+Console.ReadKey();
+}
+}
+}
