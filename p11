@@ -1,0 +1,97 @@
+<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs"
+Inherits="_Default" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server"> <title></title> </head>
+<body>
+<form id="form1" runat="server">
+<div>
+<asp:Label ID="Label1" runat="server" Text="Practical No. 3"
+Font-Bold="True" Font-Italic="True" Font-Names="Century Schoolbook"
+Font-Size="XX-Large" Font-Underline="True" ForeColor="Red"></asp:Label>
+<br />
+<br />
+<asp:Label ID="Label2" runat="server" Font-Bold="True"
+Font-Names="Times New Roman" Font-Size="X-Large" ForeColor="Blue"
+Text="b) Calendar Control Example"></asp:Label>
+<br />
+<br />
+<asp:Calendar ID="Calendar1" runat="server" BackColor="White"
+BorderColor="Black" BorderStyle="Solid" CellSpacing="1" FontNames="Verdana" FontSize="12pt" ForeColor="Black" Height="250px"
+NextPrevFormat="ShortMonth" Width="330px">
+<DayHeaderStyle Font-Bold="True" Font-Size="8pt" ForeColor="#333333"
+Height="8pt" />
+<DayStyle BackColor="#CCCCCC" />
+<NextPrevStyle Font-Bold="True" Font-Size="8pt" ForeColor="White" />
+<OtherMonthDayStyle ForeColor="#999999" />
+<SelectedDayStyle BackColor="#333399" ForeColor="White" />
+<TitleStyle BackColor="#333399" BorderStyle="Solid" Font-Bold="True"
+Font-Size="12pt" ForeColor="White" Height="12pt" />
+<TodayDayStyle BackColor="#999999" ForeColor="White" />
+</asp:Calendar>
+<br />
+<asp:Label ID="Label3" runat="server" Font-Names="Times New Roman"
+Font- Size="15pt" Text = "Todays Date: "></asp:Label>
+<br />
+<br />
+<asp:Label ID="Label4" runat="server" Font-Names="Times New Roman"
+Font-Size="15pt" Text="Select Your Birth Date: "></asp:Label>
+<br />
+<br />
+<asp:Label ID="Label5" runat="server" Font-Names="Times New Roman"
+Font-Size="15pt" Text="Days remaining for Yor Birthday: "></asp:Label>
+<br />
+<br />
+<asp:Label ID="Label6" runat="server" Font-Names="Times New Roman"
+Font-Size="15pt" Text="Days Remaining for NEW YEAR: "></asp:Label>
+<br />
+<br />
+<asp:Button ID="Button1" runat="server" Text="Result" Font-Italic="False"
+Font-Names="Times New Roman" Font-Size="15pt" Font-Bold="True"
+onclick="Button1_Click" />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<asp:Button ID="Button2" runat="server" Text="Reset" Font-Italic="False"
+Font-Names="Times New Roman" Font-Size="15pt" Font-Bold="True"
+Height="34px" onclick="Button2_Click" />
+<br />
+</div>
+</form>
+</body>
+</html>
+
+
+Default.aspx.cs Page:
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+public partial class _Default : System.Web.UI.Page
+{
+protected void Page_Load(object sender, EventArgs e)
+{ }
+protected void Button1_Click(object sender, EventArgs e)
+{
+//Current Date
+Label3.Text = Label3.Text + " " + Calendar1.TodaysDate.ToShortDateString();
+//Birthday
+Label4.Text = Label4.Text + " " +
+Calendar1.SelectedDate.Date.ToShortDateString();
+//Calculation
+int year = Calendar1.SelectedDate.Year;
+int month = Calendar1.SelectedDate.Month;
+int day = Calendar1.SelectedDate.Day;
+TimeSpan d = new DateTime(year, month, day) - DateTime.Now;
+Label5.Text = Label5.Text + " " + d.Days.ToString() + " Days";
+//New Year
+TimeSpan d1 = new DateTime(2023, 12, 31) - DateTime.Now;
+Label6.Text = Label6.Text + " " + d1.Days.ToString() + " Days";
+}
+protected void Button2_Click(object sender, EventArgs e)
+{
+Response.Redirect("http://localhost:49441/WebSite2/Default.aspx");
+}
+}
