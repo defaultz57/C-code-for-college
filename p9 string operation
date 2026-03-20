@@ -1,0 +1,45 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+namespace ConsoleApplication2
+{
+class Program
+{
+static void Main(string[] args)
+{
+string mystring;
+int a = 100;
+string s = " This is test string ";
+string s1 = " ASP.NET with C#";
+//Type Conversion from int to string
+Console.WriteLine("Convert Number to String");
+mystring = a.ToString();
+Console.WriteLine("String is " + mystring);
+Console.WriteLine("\n-----------------------------------------");
+//Trim() Method
+Console.WriteLine("\nBefore Trim() Method: " + s);
+s = s.Trim();
+Console.WriteLine("After Trim() Method: " + s);
+Console.WriteLine("\n-----------------------------------------");
+// join two strings (Concatination)
+string joinedString = string.Concat(s, s1);
+Console.WriteLine("\nJoined string: " + joinedString);
+Console.WriteLine("\n-----------------------------------------");
+// substring
+s = s.Substring(0, 4);
+Console.WriteLine("\nSubstring() Method: " + s);
+Console.WriteLine("\n-----------------------------------------");
+s = s.ToUpper();
+Console.WriteLine("\nUppercase String: " + s);
+Console.WriteLine("\n-----------------------------------------");
+s = s.Replace("IS", "AT");
+Console.WriteLine("\nReplace String: " + s);
+Console.WriteLine("\n-----------------------------------------");
+int length = s.Length;
+Console.WriteLine("\nLength of String is: " + length);
+Console.WriteLine("\n-----------------------------------------");
+Console.ReadKey();
+}
+}
+}
