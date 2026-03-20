@@ -1,0 +1,114 @@
+using System;
+namespace sycs
+{
+ class sycs
+ {
+ static void Main(string[] args)
+ {
+ Scooter sc = new Scooter();
+ sc.ScooterType();
+ Car c = new Car();
+ c.CarType();
+ Console.ReadKey();
+ 
+ //Creating Base Class
+ class Tyre
+ {
+ protected void TyreType()
+ {
+ Console.WriteLine("This is Tubeless Tyre");
+ }
+ }
+ //Creating Child Class
+ class Scooter : Tyre
+ {
+ public void ScooterType()
+ {
+ Console.WriteLine("\nScooter Color is Red");
+ TyreType();
+ }
+ }
+ //Creating Child Class
+ class Car : Tyre
+ {
+ public void CarType()
+ {
+ Console.WriteLine("\n\nCar Type : Ferrari");
+ TyreType();
+ }
+ }
+}
+
+
+
+
+B) Namespacses:
+1. Example of namespace in C# where one namespace program accesses another namespace program.
+Program:
+using System;
+namespace First
+{
+ public class Hello
+ {
+ public void sayHello()
+ {
+ Console.WriteLine("Hello First Namespace");
+ }
+ }
+}
+namespace Second
+{
+ public class Hello
+ {
+ public void sayHello()
+ {
+ Console.WriteLine("Hello Second Namespace");
+ }
+ }
+}
+public class TestNamespace
+{
+ public static void Main(String[] args)
+ {
+ First.Hello h1 = new First.Hello();
+ Second.Hello h2 = new Second.Hello();
+ h1.sayHello();
+ h2.sayHello();
+ }
+}
+2. Example of namespace where we are using "using" keyword so that we don't have to use a complete name
+for accessing a namespace program.
+Program:
+using System;
+using First;
+using Second;
+namespace First
+{
+ public class Hello
+ {
+ public void sayHello()
+ {
+ Console.WriteLine("Hello Namespace");
+ }
+ }
+}
+namespace Second
+{
+ public class Welcome
+ {
+ public void sayWelcome()
+ {
+ Console.WriteLine("Welcome Namespace");
+ }
+ }
+}
+public class TestNamespace
+{
+ public static void Main(String[] args)
+ {
+ Hello h1 = new Hello();
+ Welcome w1 = new Welcome();
+ h1.sayHello();
+ w1.sayWelcome();
+ }
+}
